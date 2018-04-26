@@ -1,0 +1,16 @@
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20180426-3944-3hff55.rb extconf.rb
+
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

@@ -1,0 +1,15 @@
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20180426-3944-1d3jscf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/dev/RubymineProjects/instagram_clone/vendor/cache/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20180426-3944-g18z9c/bindex
