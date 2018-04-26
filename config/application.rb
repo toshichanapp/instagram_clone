@@ -12,6 +12,7 @@ module InstagramClone
     config.load_defaults 5.1
 
     config.generators do |g|
+      g.template_engine :slim
       g.stylesheets false
       g.javascripts false
       g.helper false
