@@ -1,0 +1,22 @@
+= form_with(model: picture, local: true, url: choose_new_or_edit('picture'), class: :card) do |form|
+  - if @picture.errors.any?
+    #error_explanation
+      h2
+        = "#{picture.errors.count }件のエラーがあります。"
+      ul
+        - picture.errors.full_messages.each do |msg|
+          li
+            = msg
+  .custom-file
+    .custom-file-input#customFile
+      = form.file_field :image, id: :picture_image
+    .custom-file-label(for="customFile")
+      = form.label :image
+  .form-group
+    = form.label :description
+    = form.text_field :description, class: 'form-control'
+  = form.hidden_field :user_id, value: current_user.id
+  = form.hidden_field :image_cache
+  = form.submit
+
+= link_to 'ブログ一覧画面にもどる', pictures_path

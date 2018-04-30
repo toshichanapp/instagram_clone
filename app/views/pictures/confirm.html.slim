@@ -1,0 +1,17 @@
+
+= form_with(model: @picture, url: pictures_path, local: true) do |form|
+  = form.hidden_field :user_id
+  = form.hidden_field :image, value: @picture.image.cache_name
+  = form.hidden_field :description
+  p
+    = image_tag(@picture.image.url)
+  p
+    = @picture.description
+  = form.submit '登録する'
+
+= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form|
+  = form.hidden_field :user_id
+  = form.hidden_field :image, value: @picture.image.cache_name
+  = form.hidden_field :description
+  = form.submit 'もどる', name: 'back'
+
