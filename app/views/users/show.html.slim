@@ -1,6 +1,19 @@
-h1 User Show
+h1
+  = @user.name
+.btn.btn-secondary.btn-lg.btn-block
+  = link_to 'ユーザ情報を編集する', edit_user_path(current_user.id)
+.btn.btn-danger.btn-lg.btn-block
+  = link_to 'ユーザを削除する', @user, method: :delete,
+    data: { confirm: "You sure?" }
 
-= @user.name
+hr
+h2 ユーザの投稿一覧
+ul.list-inline
+  li.list-inline-item
+    span
+      | 投稿
+      span
+        = @user.pictures.size
+      | 件
+= render  partial: 'user_picture', collection: @user.pictures, as: :picture
 
-= link_to "delete", @user, method: :delete,
-  data: { confirm: "You sure?" }
