@@ -1,0 +1,14 @@
+header
+  ul.nav.nav-pills.nav-fill
+    li.nav-item
+      = link_to pictures_path, class: 'nav-link'
+        = fa_icon 'instagram 3x'
+    li.nav-item
+      = link_to new_picture_path, class: 'nav-link'
+        = fa_icon 'plus-circle 3x'
+    li.nav-item
+      = link_to new_picture_path, class: 'nav-link'
+        = fa_icon 'heart 3x'
+    li.nav-item
+      = link_to user_path(current_user.id), class: 'nav-link'
+        = fa_icon 'user 3x'
