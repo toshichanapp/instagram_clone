@@ -1,11 +1,39 @@
-h1 Log in
-= form_with(scope: :session, url: sessions_path, local: true) do |f|
-  
-  = f.label :email
-  = f.email_field :email
-  
-  = f.label :password
-  = f.password_field :password
-  
-  = f.submit "Log in"
-
+main.container
+  .row
+    .col-md-10.col-lg-8.col-xl-7.mx-md-auto.my-5
+      h1.h3.mb-4 ログイン
+      article
+        = form_with(scope: :session, url: sessions_path, local: true, class:'card')   do |f|
+          .card-body
+            - if @user.errors.any?
+              #error_explanation
+                h2
+                  = pluralize(@user.errors.count, "error")
+                ul
+                  - @user.errors.full_messages.each do |message|
+                  li
+                    = message
+            = render 'commons/flash'
+            .form-group.mb-3
+              label.sr-only
+                | メールアドレス
+              .input-group
+                .input-group-prepend
+                  .input-group-text
+                    = fa_icon 'envelope'
+                    .sr-only
+                      | メールアドレス
+                = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+            .form-group.mb-3
+              label.sr-only
+                | パスワード
+              .input-group
+                .input-group-prepend
+                  .input-group-text
+                    = fa_icon 'key'
+                    .sr-only
+                      | パスワード
+                = f.password_field :password, class: 'form-control',
+                  placeholder: 'Password'
+            = f.submit 'ログイン', class: 'btn btn-primary btn-block',
+              data: { disable_with: 'Please wait a moment' }
