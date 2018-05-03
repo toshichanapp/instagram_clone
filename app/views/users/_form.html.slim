@@ -1,23 +1,45 @@
-- if @user.errors.any?
-  #error_explanation
-    h2
-      = pluralize(@user.errors.count, "error")
-    ul
-      - @user.errors.full_messages.each do |message|
-        li
-          = message
 
-= form_with(model: @user, local: true) do |f|
-  = f.label :name
-  = f.text_field :name
-  
-  = f.label :email
-  = f.email_field :email
-  
-  = f.label :password
-  = f.password_field :password
-  
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-  
-  = f.submit "submit"
+article
+  = form_with(model: @user, local: true, class: 'card')  do |f|
+    .card-body
+      .form-group.mb-3
+        label.sr-only
+          | ユーザネーム
+        .input-group
+          .input-group-prepend
+            .input-group-text
+              = fa_icon 'user'
+              .sr-only
+                | ユーザネーム
+          = f.text_field :name, class: 'form-control', placeholder: 'ユーザネーム'
+      .form-group.mb-3
+        label.sr-only
+          | メールアドレス
+        .input-group
+          .input-group-prepend
+            .input-group-text
+              = fa_icon 'envelope'
+              .sr-only
+                | メールアドレス
+          = f.email_field :email, class: 'form-control', placeholder: 'メールアドレス'
+      .form-group.mb-3
+        label.sr-only
+          | パスワード
+        .input-group
+          .input-group-prepend
+            .input-group-text
+              = fa_icon 'key'
+              .sr-only
+                | パスワード
+          = f.password_field :password, class: 'form-control',
+            placeholder: 'Password'
+        .input-group
+          .input-group-prepend
+            .input-group-text
+              = fa_icon 'key'
+              .sr-only
+                | パスワード確認
+          = f.password_field :password_confirmation, class: 'form-control',
+            placeholder: 'Password_confirmation'
+      = f.submit '登録する', class: 'btn btn-primary btn-block',
+        data: { disable_with: 'Please wait a moment' }
