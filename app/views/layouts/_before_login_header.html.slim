@@ -1,0 +1,9 @@
+header
+  ul.nav.nav-pills.nav-fill
+    li.nav-item
+      = link_to pictures_path, class: 'nav-link'
+        = fa_icon 'instagram 3x'
+    li.nav-item
+      = link_to new_session_path, method: :delete, class: 'nav-link'
+        = fa_icon 'sign-in 3x'
+    
