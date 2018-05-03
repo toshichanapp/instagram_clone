@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :pictures
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
