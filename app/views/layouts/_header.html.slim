@@ -12,3 +12,7 @@ header
     li.nav-item
       = link_to user_path(current_user.id), class: 'nav-link'
         = fa_icon 'user 3x'
+    li.nav-item
+      = link_to session_path(current_user.id), method: :delete, class: 'nav-link'
+        = fa_icon 'sign-out 3x'
+    
