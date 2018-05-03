@@ -1,3 +1,5 @@
+ruby:
+  favorite = current_user.favorites.find_by(picture_id: picture.id)
 atricle
   .card(style="width: 100%;")
     .card-header
@@ -7,3 +9,8 @@ atricle
       ul.list-group.list-group-flush
         li.list-group-item
           = picture.description
+        li.list-group-item
+          - if favorite
+           = link_to 'お気に入り解除はこちらから', picture_path(picture)
+          - else
+            = link_to 'お気に入りはこちらから', picture_path(picture)
