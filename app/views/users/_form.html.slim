@@ -2,6 +2,14 @@
 article
   = form_with(model: @user, local: true, class: 'card')  do |f|
     .card-body
+      - if @user.errors.any?
+        #error_explanation
+          h2
+            = "#{@user.errors.count }件のエラーがあります。"
+          ul
+            - @user.errors.full_messages.each do |msg|
+              li
+                = msg
       .form-group.mb-3
         label.sr-only
           | ユーザネーム

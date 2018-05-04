@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   end
   
   def new
+    if logged_in?
+      return redirect_to pictures_url
+    end
     @user = User.new
   end
   
@@ -24,7 +27,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.attributes = user_params
-    if @user.save!
+    if @user.valid?
+      @user.save
       redirect_to user_url(@user)
     else
       render 'edit'
