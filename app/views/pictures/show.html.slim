@@ -2,9 +2,6 @@ ruby:
   favorite = current_user.favorites.find_by(picture_id: @picture.id)
 
 = render 'pictures/picture', picture: @picture
-- if @picture.user == current_user
-  .btn.btn-secondary.btn-lg.btn-block
-    = link_to '編集する', edit_picture_path(@picture)
 
 .btn.btn-primary.btn-lg.btn-block
   - if favorite
