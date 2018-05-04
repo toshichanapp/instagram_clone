@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   
-  before_action :redirect_non_login_user, only: %i[show new edit]
+  before_action :redirect_non_login_user
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   
   def index
